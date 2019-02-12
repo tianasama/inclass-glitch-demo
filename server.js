@@ -75,12 +75,28 @@ app.get('/category-playlists', function (request, response) {
   });
 });
 
-//AUDIO FEATURES
+//AUDIO FEATURES #1 - Rickrolled
 app.get('/audio-features', function (request, response) {
   
   // Get the audio features for a track ID
   spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC') //LMAOOOOOOOOOOOOOOOOO HOW COULD YOU SPOTIFY!!! Never Gonna Give You Up.....You got me....
     .then(function(data) {                                      //The disrespect jsjfkajf
+    
+      //Send the audio features object
+      response.send(data.body);
+    
+    }, function(err) {
+      console.error(err);
+    });
+  
+});
+
+//AUDIO FEATURES #2 - U Ba Khin
+app.get('/audio-features', function (request, response) {
+  
+  // Get the audio features for a track ID
+  spotifyApi.getAudioFeaturesForTrack('4mBSeOEiQ4WgDaCnydb0tZ')
+    .then(function(data) {                                      
     
       //Send the audio features object
       response.send(data.body);

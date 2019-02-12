@@ -55,13 +55,15 @@ $(function() {
     console.groupEnd();
     
     // The audio features we want to show
-    var keys = ["danceability", "energy", "acousticness","",""]
+    var keys = ["danceability", "energy", "acousticness","liveness","energy","speechiness"]
     
     // Display the audio features
     keys.map(function(key, i) {
       if (data.hasOwnProperty(key)) {
         var feature = $('<p><span class="big-number">' + data[key] + ' </span>'  + key + '</p>');
         feature.appendTo('#audio-features-container');
+        // var trackName = $('<h3>' + data.artists[0].name + '</h3>');
+        // trackName.appendTo('#audio-features-container');
       }
     });
   });
