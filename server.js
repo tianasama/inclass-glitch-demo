@@ -75,11 +75,12 @@ app.get('/category-playlists', function (request, response) {
   });
 });
 
+//AUDIO FEATURES
 app.get('/audio-features', function (request, response) {
   
   // Get the audio features for a track ID
   spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC') //LMAOOOOOOOOOOOOOOOOO HOW COULD YOU SPOTIFY!!! Never Gonna Give You Up.....You got me....
-    .then(function(data) {                                      //Gonna change it to U Ba Khin by STRFKR
+    .then(function(data) {                                      //The disrespect jsjfkajf
     
       //Send the audio features object
       response.send(data.body);
@@ -87,17 +88,17 @@ app.get('/audio-features', function (request, response) {
     }, function(err) {
       console.error(err);
     });
+  
 });
 
 app.get('/artist', function (request, response) {
   
   // Get information about an artist
-  spotifyApi.getArtist('6jJ0s89eD6GaHleKKya26X')
+  spotifyApi.getArtist('3yY2gUcIsjMr8hjo51PoJ8')
     .then(function(data) {
     
       // Send the list of tracks
       response.send(data.body);
-    
     }, function(err) {
       console.error(err);
     });
@@ -106,7 +107,7 @@ app.get('/artist', function (request, response) {
 app.get('/artist-top-tracks', function (request, response) {
   
   // Get an artist's top tracks in a country
-  spotifyApi.getArtistTopTracks('0LcJLqbBmaGUft1e9Mm8HV', 'SE')
+  spotifyApi.getArtistTopTracks('2Tz1DTzVJ5Gyh8ZwVr6ekU', 'US')
     .then(function(data) {
     
       // Send the list of tracks
