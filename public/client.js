@@ -122,7 +122,20 @@ $(function() {
   
   
   $.get('/related-artists', function(data) {
+    console.group('%cResponse from /related-artists', 'color: #000000; font-size: large');
     
+    var artistId = '6DnF6PBcTSsEZuEjXpK0gX';
+    if (data.body.artists.length) {
+      // Print the number of similar artists
+      console.log('I got ' + data.body.artists.length + ' similar artists!');
+
+      console.log('The most similar one is ' + data.body.artists[0].name);
+    } else {
+      console.log("I didn't find any similar artists.. Sorry.");
+    }
+  },
+  function(err) {
+    console.log('Something went wrong..', err.message);
   });
   //
 
