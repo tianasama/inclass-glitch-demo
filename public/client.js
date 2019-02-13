@@ -91,13 +91,25 @@ $(function() {
     
     //Display the artist's popularity
     console.log(data.popularity);
-    var artistPopularity = $(
-    data.popularity
+    var artistPopularity = $('<h4> Popularity: ' + data.popularity + '</h4>');
+    artistPopularity.appendTo('#artist-container');
+    
+    //Display the artist's followers
+    console.log(data.followers.total);
+    var artistFollowers = $('<h4> Followers: ' + data.followers.total + '</h4>');
+    artistFollowers.appendTo('#artist-container');
+    
   });
+    
   
   $.get('/artist-top-tracks', function(data) {
     // "Data" is the object we get from the API. See server.js for the function that returns it.
     console.group('%cResponse from /artist-top-tracks', 'color: #F037A5; font-size: large');
+    
+    //Display artist name
+    var artistName = $('<h3>' + data[0].artists[0].name + '</h3>')
+    artistName.appendTo('#top-tracks-container');
+    
     console.log(data);
     console.groupEnd();
     
