@@ -122,8 +122,8 @@ $(function() {
   
   
   $.get('/related-artists', function(data) {
-    console.group('%cResponse from /related-artists', 'color: #000000; font-size: large');
     
+    console.group('%cResponse from /related-artists', 'color: #000000; font-size: large');
     var artistId = '6DnF6PBcTSsEZuEjXpK0gX';
     if (data.body.artists.length) {
       // Print the number of similar artists
@@ -137,6 +137,7 @@ $(function() {
   function(err) {
     console.log('Something went wrong..', err.message);
   });
+
   //
 
 });
