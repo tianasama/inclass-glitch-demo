@@ -88,6 +88,11 @@ $(function() {
       var genreItem = $('<p>' + genre + '</p>');
       genreItem.appendTo('#artist-container');
     });
+    
+    //Display the artist's popularity
+    console.log(data.popularity);
+    var artistPopularity = $(
+    data.popularity
   });
   
   $.get('/artist-top-tracks', function(data) {
