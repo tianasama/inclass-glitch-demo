@@ -134,6 +134,17 @@ app.get('/artist-top-tracks', function (request, response) {
     });
 });
 
+app.get('/related-artists', function(request, response) {
+  // Get artists related to an artist
+spotifyApi.getArtistRelatedArtists('0qeei9KQnptjwb8MgkqEoy')
+  .then(function(data) {
+    console.log(data.body);
+  }, function(err) {
+    done(err);
+  });  
+  
+});
+
 
 //-------------------------------------------------------------//
 //------------------------ WEB SERVER -------------------------//

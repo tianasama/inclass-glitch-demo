@@ -119,5 +119,11 @@ $(function() {
       trackName.appendTo('#top-tracks-container');
     });
   });
+  
+  
+  $.get('/related-artists', function(data) {
+    
+  });
+  //
 
 });
